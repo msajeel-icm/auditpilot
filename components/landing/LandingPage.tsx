@@ -12,7 +12,7 @@ export function LandingPage() {
     <div className="min-h-dvh bg-[hsl(var(--background))] text-[hsl(var(--foreground))]">
       <LandingHeader />
       <motion.main
-        initial={{ opacity: 0 }}
+        initial={false}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.35, ease: "easeOut" }}
       >
