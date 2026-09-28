@@ -44,7 +44,7 @@ export function Sidebar() {
               href={href}
               aria-current={active ? "page" : undefined}
               className={cn(
-                "flex h-8 items-center gap-2 rounded-md px-2 text-[13px] outline-none transition-colors focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-1 focus-visible:ring-offset-[hsl(var(--sidebar))]",
+                "flex h-8 items-center gap-2 rounded-md px-2 text-[13px] outline-none transition-colors duration-150 ease-out focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-1 focus-visible:ring-offset-[hsl(var(--sidebar))]",
                 active
                   ? "bg-[hsl(var(--accent)/0.14)] text-[hsl(var(--accent))]"
                   : "text-[hsl(var(--muted-foreground))] hover:bg-[hsl(var(--muted))] hover:text-[hsl(var(--sidebar-foreground))]",
