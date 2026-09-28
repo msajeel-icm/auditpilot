@@ -8,8 +8,8 @@ export default function AgentsPage() {
           Agents
         </h2>
         <p className="mt-0.5 text-[12px] text-[hsl(var(--muted-foreground))]">
-          Progressive SSE stream of the Reader → Narrator audit pipeline for
-          the selected case. Cancel or Esc aborts an in-flight run.
+          Run the Reader → Narrator audit pipeline for the selected case.
+          Steps stream over SSE; Cancel or Esc aborts an in-flight run.
         </p>
       </div>
       <AgentRunner />

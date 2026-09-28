@@ -49,7 +49,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         <TopBar title={title} onOpenPalette={openPalette} />
         <motion.main
           key={pathname}
-          initial={{ opacity: 0 }}
+          initial={false}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.16, ease: "easeOut" }}
           className="min-h-0 flex-1 overflow-auto p-4"

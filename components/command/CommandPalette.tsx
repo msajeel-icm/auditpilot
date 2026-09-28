@@ -198,7 +198,7 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
       role="presentation"
     >
       <div
-        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+        className="absolute inset-0 bg-[hsl(220_20%_10%/0.35)] backdrop-blur-[2px]"
         aria-hidden
         onClick={close}
       />

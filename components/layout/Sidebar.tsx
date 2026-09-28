@@ -26,13 +26,16 @@ export function Sidebar() {
       className="flex h-full w-[220px] shrink-0 flex-col border-r border-[hsl(var(--border))] bg-[hsl(var(--sidebar))]"
       aria-label="Primary"
     >
-      <div className="flex h-11 items-center border-b border-[hsl(var(--border))] px-3">
+      <div className="flex h-11 flex-col justify-center border-b border-[hsl(var(--border))] px-3">
         <Link
           href="/dashboard"
           className="rounded-sm text-[13px] font-semibold tracking-tight text-[hsl(var(--sidebar-foreground))] outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-1 focus-visible:ring-offset-[hsl(var(--sidebar))]"
         >
           AuditPilot
         </Link>
+        <span className="text-[11px] leading-tight text-[hsl(var(--muted-foreground))]">
+          Medicaid audit prep
+        </span>
       </div>
       <nav className="flex flex-1 flex-col gap-0.5 p-2" aria-label="Main">
         {NAV.map(({ href, label, icon: Icon }) => {

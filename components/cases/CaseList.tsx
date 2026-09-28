@@ -48,7 +48,7 @@ export function CaseList() {
                 router.push("/documents");
               }}
               className={cn(
-                "flex w-full flex-col gap-1.5 px-3 py-2.5 text-left outline-none transition-[background-color,box-shadow] duration-150 ease-out focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[hsl(var(--ring))]",
+                "flex w-full flex-col gap-1 px-3 py-2 text-left outline-none transition-[background-color,box-shadow] duration-150 ease-out focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[hsl(var(--ring))]",
                 active
                   ? "bg-[hsl(var(--accent)/0.12)] shadow-[inset_2px_0_0_0_hsl(var(--accent))]"
                   : "bg-[hsl(var(--card))] hover:bg-[hsl(var(--muted))]",
@@ -62,11 +62,11 @@ export function CaseList() {
                   className={cn(
                     "shrink-0 rounded px-1.5 py-0.5 font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-wide",
                     c.risk === "high" &&
-                      "bg-[hsl(0_70%_40%/0.2)] text-[hsl(0_80%_70%)]",
+                      "bg-[hsl(0_70%_96%)] text-[hsl(0_65%_38%)]",
                     c.risk === "medium" &&
-                      "bg-[hsl(40_80%_40%/0.2)] text-[hsl(40_90%_70%)]",
+                      "bg-[hsl(40_90%_94%)] text-[hsl(32_80%_32%)]",
                     c.risk === "low" &&
-                      "bg-[hsl(var(--accent)/0.15)] text-[hsl(var(--accent))]",
+                      "bg-[hsl(var(--accent)/0.12)] text-[hsl(var(--accent))]",
                   )}
                 >
                   {RISK_LABEL[c.risk]}

@@ -8,7 +8,8 @@ export default function CasesPage() {
           Cases
         </h2>
         <p className="mt-0.5 text-[12px] text-[hsl(var(--muted-foreground))]">
-          Select a case to filter documents. Selection is stored in app state.
+          Select a case to filter Documents and feed the Agents pipeline.
+          Dense risk chips and mono IDs keep scan speed high.
         </p>
       </div>
       <CaseList />

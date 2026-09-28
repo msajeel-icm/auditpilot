@@ -61,6 +61,13 @@ function stepState(
   return "pending";
 }
 
+const STATE_CHIP: Record<StepState, string> = {
+  pending: "pending",
+  active: "running",
+  done: "done",
+  error: "error",
+};
+
 export function AgentStepper({
   runStatus,
   currentAgent,
@@ -72,9 +79,12 @@ export function AgentStepper({
 }) {
   return (
     <ol
-      className="flex flex-col gap-1 rounded-md border border-[hsl(var(--border))] bg-[hsl(var(--card))] p-2"
+      className="flex flex-col gap-0.5 rounded-md border border-[hsl(var(--border))] bg-[hsl(var(--card))] p-2"
       aria-label="Audit pipeline"
     >
+      <li className="mb-1 px-2 text-[10px] font-medium uppercase tracking-[0.06em] text-[hsl(var(--muted-foreground))]">
+        Pipeline
+      </li>
       {PIPELINE_STEPS.map((step, index) => {
         const state = stepState(
           step.id,
@@ -89,7 +99,7 @@ export function AgentStepper({
             layout
             initial={false}
             animate={{
-              opacity: state === "pending" ? 0.55 : 1,
+              opacity: state === "pending" ? 0.7 : 1,
               scale: state === "active" ? 1.01 : 1,
             }}
             transition={{ duration: 0.16, ease: "easeOut" }}
@@ -107,23 +117,36 @@ export function AgentStepper({
               ) : state === "active" ? (
                 <Loader2 className="h-3.5 w-3.5 animate-spin text-[hsl(var(--accent))]" />
               ) : state === "error" ? (
-                <X className="h-3.5 w-3.5 text-[hsl(0_80%_65%)]" />
+                <X className="h-3.5 w-3.5 text-[hsl(0_65%_38%)]" />
               ) : (
                 <Circle className="h-3 w-3 text-[hsl(var(--muted-foreground))]" />
               )}
             </span>
             <span
               className={cn(
-                state === "active" && "text-[hsl(var(--accent))]",
+                "min-w-0 flex-1 truncate",
+                state === "active" && "font-medium text-[hsl(var(--accent))]",
                 state === "done" && "text-[hsl(var(--foreground))]",
                 state === "pending" && "text-[hsl(var(--muted-foreground))]",
-                state === "error" && "text-[hsl(0_80%_70%)]",
+                state === "error" && "text-[hsl(0_65%_38%)]",
               )}
             >
               {step.label}
             </span>
-            <span className="ml-auto font-[family-name:var(--font-mono)] text-[10px] text-[hsl(var(--muted-foreground))]">
-              {step.id}
+            <span
+              className={cn(
+                "shrink-0 rounded px-1.5 py-0.5 font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-wide",
+                state === "active" &&
+                  "bg-[hsl(var(--accent)/0.12)] text-[hsl(var(--accent))]",
+                state === "done" &&
+                  "bg-[hsl(var(--muted))] text-[hsl(var(--muted-foreground))]",
+                state === "pending" &&
+                  "border border-[hsl(var(--border))] text-[hsl(var(--muted-foreground))]",
+                state === "error" &&
+                  "bg-[hsl(0_70%_96%)] text-[hsl(0_65%_38%)]",
+              )}
+            >
+              {STATE_CHIP[state]}
             </span>
           </motion.li>
         );
