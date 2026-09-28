@@ -7,13 +7,13 @@ const METRICS = [
 
 export default function DashboardPage() {
   return (
-    <div className="flex flex-col gap-4">
-      <div>
-        <h2 className="text-[13px] font-medium text-[hsl(var(--foreground))]">
-          Dashboard
+    <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-0.5">
+        <h2 className="text-[13px] font-medium tracking-tight text-[hsl(var(--foreground))]">
+          Overview
         </h2>
-        <p className="mt-0.5 text-[12px] text-[hsl(var(--muted-foreground))]">
-          Audit prep overview — placeholder metrics
+        <p className="text-[12px] text-[hsl(var(--muted-foreground))]">
+          Audit prep — mock metrics for the current workspace
         </p>
       </div>
       <div
@@ -25,12 +25,12 @@ export default function DashboardPage() {
           <div
             key={m.label}
             role="listitem"
-            className="bg-[hsl(var(--card))] px-3 py-2.5"
+            className="bg-[hsl(var(--card))] px-3 py-3"
           >
-            <div className="text-[11px] uppercase tracking-wide text-[hsl(var(--muted-foreground))]">
+            <div className="text-[10px] font-medium uppercase tracking-[0.06em] text-[hsl(var(--muted-foreground))]">
               {m.label}
             </div>
-            <div className="mt-1 font-[family-name:var(--font-mono)] text-[18px] tabular-nums tracking-tight text-[hsl(var(--foreground))]">
+            <div className="mt-1.5 font-[family-name:var(--font-mono)] text-[20px] tabular-nums leading-none tracking-tight text-[hsl(var(--foreground))]">
               {m.value}
             </div>
           </div>
