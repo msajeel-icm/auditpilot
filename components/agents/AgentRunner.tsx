@@ -233,7 +233,7 @@ export function AgentRunner() {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex flex-wrap items-end justify-between gap-3">
+      <div className="flex flex-wrap items-end justify-between gap-3 rounded-md border border-[hsl(var(--border))] bg-[hsl(var(--card))] px-3 py-3">
         <div className="flex min-w-[220px] flex-col gap-1">
           <label
             htmlFor="agent-case"
@@ -292,7 +292,7 @@ export function AgentRunner() {
             <button
               type="button"
               onClick={onCancel}
-              className="inline-flex h-8 items-center gap-1.5 rounded-md border border-[hsl(var(--border))] px-2.5 text-[12px] text-[hsl(var(--muted-foreground))] outline-none hover:bg-[hsl(var(--muted))] hover:text-[hsl(var(--foreground))] focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))]"
+              className="inline-flex h-8 items-center gap-1.5 rounded-md border border-[hsl(var(--border))] bg-[hsl(var(--background))] px-2.5 text-[12px] text-[hsl(var(--foreground))] outline-none hover:bg-[hsl(var(--muted))] focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))]"
             >
               <Square className="h-3 w-3 fill-current" aria-hidden />
               Cancel

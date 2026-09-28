@@ -91,13 +91,14 @@ export function AgentResultPanel({
 }) {
   if (runStatus === "idle") {
     return (
-      <div className="flex min-h-[140px] flex-col justify-center gap-1 rounded-md border border-dashed border-[hsl(var(--border))] px-3 py-5">
-        <p className="text-[13px] text-[hsl(var(--foreground))]">
-          Ready to run
+      <div className="flex min-h-[160px] flex-col justify-center gap-2 rounded-md border border-dashed border-[hsl(var(--border))] bg-[hsl(var(--card))] px-4 py-6">
+        <p className="text-[13px] font-medium text-[hsl(var(--foreground))]">
+          Ready to run audit
         </p>
-        <p className="text-[12px] text-[hsl(var(--muted-foreground))]">
-          Select a case and start the Reader → Narrator pipeline. Steps update
-          live over SSE as each agent starts and finishes.
+        <p className="max-w-md text-[12px] leading-relaxed text-[hsl(var(--muted-foreground))]">
+          Select a case above, then press{" "}
+          <span className="font-medium text-[hsl(var(--accent))]">Run audit</span>
+          . The Reader → Narrator pipeline streams over SSE; Esc or Cancel aborts.
         </p>
       </div>
     );
@@ -132,13 +133,13 @@ export function AgentResultPanel({
   if (runStatus === "error") {
     return (
       <div
-        className="rounded-md border border-[hsl(0_50%_35%/0.5)] bg-[hsl(0_40%_12%/0.4)] px-3 py-3"
+        className="rounded-md border border-[hsl(0_70%_86%)] bg-[hsl(0_70%_96%)] px-3 py-3"
         role="alert"
       >
-        <p className="text-[12px] font-medium text-[hsl(0_80%_75%)]">
+        <p className="text-[12px] font-medium text-[hsl(0_65%_38%)]">
           {errorTitle(errorMessage)}
         </p>
-        <p className="mt-1 text-[12px] text-[hsl(var(--muted-foreground))]">
+        <p className="mt-1 text-[12px] text-[hsl(var(--foreground))]">
           {errorMessage ?? "Unknown error."}
         </p>
         <p className="mt-2 text-[11px] text-[hsl(var(--muted-foreground))]">

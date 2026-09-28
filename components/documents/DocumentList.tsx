@@ -91,11 +91,11 @@ export function DocumentList() {
                       className={cn(
                         "shrink-0 rounded px-1.5 py-0.5 font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-wide",
                         doc.risk === "high" &&
-                          "bg-[hsl(0_70%_40%/0.2)] text-[hsl(0_80%_70%)]",
+                          "bg-[hsl(0_70%_96%)] text-[hsl(0_65%_38%)]",
                         doc.risk === "medium" &&
-                          "bg-[hsl(40_80%_40%/0.2)] text-[hsl(40_90%_70%)]",
+                          "bg-[hsl(40_90%_94%)] text-[hsl(32_80%_32%)]",
                         doc.risk === "low" &&
-                          "bg-[hsl(var(--accent)/0.15)] text-[hsl(var(--accent))]",
+                          "bg-[hsl(var(--accent)/0.12)] text-[hsl(var(--accent))]",
                       )}
                     >
                       {RISK_LABEL[doc.risk]}
