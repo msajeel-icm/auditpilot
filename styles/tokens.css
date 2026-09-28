@@ -1,18 +1,17 @@
-/* AuditPilot dark-first design tokens — Linear / Vercel density */
+/* AuditPilot light product tokens — Vercel / Notion / Stripe density (light only) */
 
-:root,
-.dark {
-  --background: 240 6% 4%;
-  --foreground: 0 0% 93%;
-  --muted: 240 5% 10%;
-  --muted-foreground: 240 4% 64%;
-  --border: 240 4% 16%;
-  --card: 240 5% 7%;
-  --accent: 187 92% 45%;
-  --accent-foreground: 187 80% 8%;
-  --sidebar: 240 6% 5%;
-  --sidebar-foreground: 0 0% 88%;
-  --ring: 187 92% 45%;
+:root {
+  --background: 220 20% 98%;
+  --foreground: 240 10% 10%;
+  --muted: 220 14% 96%;
+  --muted-foreground: 220 9% 46%;
+  --border: 220 13% 91%;
+  --card: 0 0% 100%;
+  --accent: 187 80% 32%;
+  --accent-foreground: 0 0% 100%;
+  --sidebar: 220 14% 97%;
+  --sidebar-foreground: 240 10% 10%;
+  --ring: 187 80% 32%;
   --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
@@ -24,15 +23,15 @@
 }
 
 html {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
   font-family: var(--font-sans);
-  font-size: 13px;
-  line-height: 1.45;
+  font-size: 14px;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
